@@ -1,0 +1,14 @@
+{
+  "name": "helper-1",
+  "version": "1.0.0",
+  "description": "New bot which helps you in moderation.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Sanjeeb Sahoo",
+  "license": "ISC",
+  "dependencies": {
+    "discord.js": "^11.4.2"
+  }
+}
