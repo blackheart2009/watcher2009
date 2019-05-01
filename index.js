@@ -36,6 +36,8 @@ bot.on('message', message=>{
             }
             break; 
         case 'clear':
+            if(message.member.roles.find(r => r.name === "BOSS")) return message.channel.send('YOU DO NOT HAVE PERMISSIONS')
+            .then(msg => msg.delete(10000));
             if(!args[1]) return message.reply('Error plese define second arg')
             message.channel.bulkDelete(args[1]);
             break; 
@@ -54,6 +56,51 @@ bot.on('message', message=>{
             message.channel.send(message.author, attachment3);   
         break;   
     }
+    switch (args[0]) {
+        case 'kick':
+
+            const user = message.mentions.users.first();
+
+            if (user) {
+                const member = message.guild.member(user);
+
+                if (member) {
+                    member.kick('You were kick for trolling!').then(() => {
+                        message.reply(`Sucessfully kicked ${user.tag}`);
+                    }).catch(err => {
+                        message.reply('I was unable to kick the member');
+                        console.log(err);
+                    });
+                } else {
+                    message.reply("That user isn\'t in this guild")
+                }
+            } else {
+                message.reply("You need to specify a person!");
+            }
+
+            break;
+    }
+    switch (args[0]) {
+        case 'ban':
+
+            const user = message.mentions.users.first();
+
+            if (user) {
+                const member = message.guild.member(user);
+
+                if (member) {
+                    member.ban({ressions:  'You Were Bad!'}).then(() => {
+                        message.reply(`Sucessfully Banned! ${user.tag}`);          
+                    })
+                } else {
+                    message.reply("That user isn\'t in this guild")
+                }
+            } else {
+                message.reply("You need to specify a person!");
+            }
+            
+            break;
+    }        
 })       
 
 bot.login(token);
