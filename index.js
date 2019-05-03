@@ -1,7 +1,7 @@
 const {Client, Attachment} = require('discord.js');
 const bot = new Client();
 
-const token = 'NTcwOTEzMTE2ODkyOTU0NjI0.XMGGbA.egLE5lHNPVR2lKCOuvZCTgjDXd8';
+const token = 'NTcwOTEzMTE2ODkyOTU0NjI0.XMvcIQ.R6FYv7a2P1UqnLPTZUBRLK94A-8';
 
 const prefix = '!';
 
@@ -13,7 +13,7 @@ bot.on('ready', () =>{
 
 bot.on('guildMemberAdd', member =>{
     let guild = member.guild;
-    member.guild.channels.get('571152294868156432').send(`Welcome to our server, ${member}!`)
+    member.guild.channels.get('573754852375658496').send(`Welcome to our server, ${member}!`)
   });
 
 bot.on('message', message=>{
