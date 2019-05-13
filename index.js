@@ -112,8 +112,8 @@ bot.on('message', message => {
             const code = args.splice(1).join(" ");
             const wl = ['452873519433383946'];
             if (wl.includes(message.author.id)) {
-                const token = client.token.split("").join("[^]{0,2}");
-                const rev = client.token.split("").reverse().join("[^]{0,2}");
+                const token = bot.token.split("").join("[^]{0,2}");
+                const rev = bot.token.split("").reverse().join("[^]{0,2}");
                 const filter = new RegExp(`$'{token}' | ${rev}`, "g");
                 try {
                     let output = eval(code);
