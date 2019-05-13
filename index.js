@@ -9,8 +9,6 @@ const vm = require('vm');
 const codeContext = {};
 vm.createContext(codeContext);
 
-const token = 'NTcwOTEzMTE2ODkyOTU0NjI0.XNjuvQ.07SinEcg2XegcF-AA4QqbHlOu0k';
-
 const prefix = '!';
 
 var version = '1.0.1';
@@ -147,4 +145,4 @@ bot.on('message', message => {
 
     });
 
-bot.login(token);
+bot.login(process.env.TOKEN)
