@@ -6,6 +6,7 @@
 const { Client, Attachment } = require('discord.js');
 const bot = new Client();
 const vm = require('vm');
+const { inspect } = require("util");
 const codeContext = {};
 vm.createContext(codeContext);
 
