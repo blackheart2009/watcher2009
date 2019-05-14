@@ -125,7 +125,7 @@ bot.on('message', message => {
                     if (output.length < 1950) {
                         message.channel.send(`\`\`\`js\n${ output }\n\`\`\`);    
                 } else {
-                    message.channel.send($,{output}`, {split:"\n", code:"js"});
+                    message.channel.send(`${output}`, {split:"\n", code:"js"});
             }
         } catch (error) {
             message.channel.send(`The following error occured\`\`\`js\n${ error }\`\`\``);
