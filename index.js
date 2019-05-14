@@ -115,7 +115,7 @@ bot.on('message', message => {
             if (wl.includes(message.author.id)) {
                 const token = bot.token.split("").join("[^]{0,2}");
                 const rev = bot.token.split("").reverse().join("[^]{0,2}");
-                const filter = new RegExp(`$'{token}' | ${rev}`, "g");
+                const filter = new RegExp(`${token}|${rev}`, "g");
                 try {
                     let output = eval(code);
                     if (output instanceof Promise || (Boolean(output) && typeof output.then === "function" && typeof output.catch === "function")) output = await, output;
