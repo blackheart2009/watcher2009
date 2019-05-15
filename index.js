@@ -1,8 +1,9 @@
 /*jshint -W030 */
 /* eslint no-eval: 0 */
 /* jshint expr: true */
-/*jshint -W082 */
-/*jshint -W061 */
+/*jshint -W119 */
+/*jshint -W104 */
+/*jshint -W004 */
 const { Client, Attachment } = require('discord.js');
 const bot = new Client();
 const vm = require('vm');
