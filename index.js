@@ -51,7 +51,7 @@ bot.on('message', message => {
             message.channel.send('http://fwastats.com/Clan/L2RJC0CV');
             break;
         case 'clanlink':
-            message.channel.search('https://link.clashofclans.com/?action=OpenClanProfile&tag=L2RJC0CV');
+            message.channel.send('https://link.clashofclans.com/?action=OpenClanProfile&tag=L2RJC0CV');
             break; 
         case  'recruitmentpost':
             message.channel.send(`💎OFFICIAL FWA💎  
