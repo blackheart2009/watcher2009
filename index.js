@@ -6,9 +6,10 @@
 const { Client, Attachment } = require('discord.js');
 const bot = new Client();
 const vm = require('vm');
-const { inspect } = require("util");
 const codeContext = {};
 vm.createContext(codeContext);
+
+const token = '';
 
 const prefix = '!';
 
@@ -20,8 +21,14 @@ bot.on('ready', () => {
 
 bot.on('guildMemberAdd', member => {
     let guild = member.guild;
-    member.guild.channels.get('571152294868156432').send(`Welcome to our server, ${member}!`);
+    member.guild.channels.get('573754852375658496').send(`━━━Hey ${member}!, Welcome to our server!━━━`);
 });
+
+bot.on('message', message => {
+    if(message.content.startsWith("!ping")) {
+        message.channel.send(new Date().getTime() - message.createdTimestamp + " ms");
+    }
+});                
 
 bot.on('message', message => {
 
@@ -29,18 +36,17 @@ bot.on('message', message => {
     let args = message.content.toLowerCase().substring(prefix.length).split(" ");
 
     switch (args[0]) {
-        case 'ping':
-            message.channel.send('pong!');
-            break;
-        case 'website':
+        case 'cclink':
             message.channel.send('http://kuilin.net/cc_n/clan.php?tag=L2RJC0CV');
             break;
-        case 'info':
-            if (args[1] === 'version') {
-                message.channel.send('Version ' + version);
-            } else {
-                message.channel.send('Invalid Args');
-            }
+        case  'fwastatslink':
+            message.channel.send('http://fwastats.com/Clan/L2RJC0CV');
+            break;
+        case  'recruitmentpost':
+            message.channel.send('https://band.us/band/67130116/post/48014');
+            break;        
+        case 'botinfo':
+            message.channel.send('Watcher is designed for CHAMPIONS clan. Messages sent by the user will be displayed there and sending a message in that channel will also forward it to that user. This bot is different from the others as it is the one and only private bot, design for CHAMPIONS clan only. This means that it is ensured to be hosted 24/7 without you having to pay extra hosting fees.');
             break;
         case 'clear':
             if (message.member.roles.find(r => r.name === "BOSS")) return message.channel.send('YOU DO NOT HAVE PERMISSIONS')
@@ -50,11 +56,11 @@ bot.on('message', message => {
             break;
     }
     switch (args[0]) {
-        case 'sendclan':
+        case 'clanprofile':
             const attachment1 = new Attachment('./My-clan.jpg');
             message.channel.send(message.author, attachment1);
             break;
-        case 'sendlogo':
+        case 'clanlogo':
             const attachment2 = new Attachment('./My-clan-logo.png');
             message.channel.send(message.author, attachment2);
             break;
@@ -113,9 +119,9 @@ bot.on('message', message => {
             const code = args.splice(1).join(" ");
             const wl = ['452873519433383946'];
             if (wl.includes(message.author.id)) {
-                const token = bot.token.split("").join("[^]{0,2}");
-                const rev = bot.token.split("").reverse().join("[^]{0,2}");
-                const filter = new RegExp(`${token}|${rev}`, "g");
+                const token = client.token.split("").join("[^]{0,2}");
+                const rev = client.token.split("").reverse().join("[^]{0,2}");
+                const filter = new RegExp(`$'{token}' | ${rev}`, "g");
                 try {
                     let output = eval(code);
                     if (output instanceof Promise || (Boolean(output) && typeof output.then === "function" && typeof output.catch === "function")) output = await, output;
@@ -123,9 +129,9 @@ bot.on('message', message => {
                     output = output.replace(filter, "[TOKEN]");
                     output = clean(output);
                     if (output.length < 1950) {
-                        message.channel.send(`\`\`\`js\n${ output }\n\`\`\``);    
+                        message.channel.send(`\`\`\`js\n${ output }\n\`\`\`);    
                 } else {
-                    message.channel.send(`${output}`, {split:"\n", code:"js"});
+                    message.channel.send($,{output}`, {split:"\n", code:"js"});
             }
         } catch (error) {
             message.channel.send(`The following error occured\`\`\`js\n${ error }\`\`\``);
@@ -146,4 +152,4 @@ bot.on('message', message => {
 
     });
 
-bot.login(process.env.TOKEN)
+bot.login(token);
