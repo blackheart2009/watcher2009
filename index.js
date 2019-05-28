@@ -21,7 +21,15 @@ bot.on('ready', () => {
 
 bot.on('guildMemberAdd', member => {
     let guild = member.guild;
-    member.guild.channels.get('573754852375658496').send(`━━━Hey ${member}!, Welcome to our server!━━━`);
+    member.guild.channels.get('573754852375658496').send(`━━━━━━━━━━━━━━━━━━━━━━━━
+    Hey ${member}!, Welcome to our server 🎉🤗 !
+    ━━━━━━━━━━━━━━━━━━━━━━━━
+    1. Be sure to read #general_clan-rules📜  first!
+    2. Look in #server_rules🚦for server information & rules.
+    3- Check out all about FWA rules in #fwa_war-rules🚨 
+    4. If you're done go to #chit-chat💬 and chat with us.
+    5- Be sure to check if it's Win or Loose war in #📣win_or_loss-war-announcement 
+    ━━━━━━━━━━━━━━━━━`);
 });
 
 bot.on('message', message => {
@@ -42,9 +50,50 @@ bot.on('message', message => {
         case  'fwastatslink':
             message.channel.send('http://fwastats.com/Clan/L2RJC0CV');
             break;
+        case 'clanlink':
+            message.channel.search('https://link.clashofclans.com/?action=OpenClanProfile&tag=L2RJC0CV');
+            break; 
         case  'recruitmentpost':
-            message.channel.send('https://band.us/band/67130116/post/48014');
-            break;        
+            message.channel.send(`💎OFFICIAL FWA💎  
+
+            📝Details📝:
+            
+            ✨Clan Name: ÇHÃMPîÕŇŞ
+            🎈Level: 16
+            🎈Tag: #L2RJC0CV
+            🎈Link: http://tiny.cc/Fwachampions
+             
+            🎁Benefits Of FWA🎁:
+            
+            💰Easy Loots and War Stars 😚
+            💆🏻‍♂Stress Free Wars with Minimal effort🏆
+            💫90% Marching Rate💫
+            
+            🎪Clan Requirements🎪:
+            
+            🔥Town hall 10+
+            🔥FIN must be completed
+            🔥XP lvl 100+ acceptable.
+            🔥Master League above.
+            🔥Should have 1k+ CG points.
+            🔥No War Timers (Except the ones who were before in FWA clan only)
+            🔥Must have Discord/WhatsApp/Band (Must have 1 thing, or all if you want) 
+            
+            
+            🎯CWL🎯:
+            ✌Must inform Leader(If you wanna do CWL) 
+            ✌Must get your attacks done within first 12 hours.
+            ✌Ask Targets to any co.
+            
+            🥊Clan Rules🥊:
+            
+            🎍Follow Clan Mails.
+            🎍Must push 1 league up in each session.
+            
+            🎶🎶🎶Pushing Again to go back to top India 🎶🎶🎶
+            
+            📢 Primary Language:-Hindi/English.`);
+            break;                
         case 'botinfo':
             message.channel.send('Watcher is designed for CHAMPIONS clan. Messages sent by the user will be displayed there and sending a message in that channel will also forward it to that user. This bot is different from the others as it is the one and only private bot, design for CHAMPIONS clan only. This means that it is ensured to be hosted 24/7 without you having to pay extra hosting fees.');
             break;
