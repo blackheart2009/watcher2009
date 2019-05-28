@@ -9,7 +9,7 @@ const vm = require('vm');
 const codeContext = {};
 vm.createContext(codeContext);
 
-const token = 'NTcwOTEzMTE2ODkyOTU0NjI0.XOzBHw.L8PPc8N59Ee1V5-ATf0BKSdDegM';
+const token = '';
 
 const prefix = '!';
 
