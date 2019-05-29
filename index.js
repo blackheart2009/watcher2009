@@ -278,4 +278,4 @@ bot.on('message', message => {
 
     });
 
-bot.login(process.env.TOKE);
+bot.login(process.env.TOKEN);
