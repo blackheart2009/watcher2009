@@ -84,7 +84,7 @@ bot.on('message', message => {
             📌2Hindi: https://drive.google.com/open?id=1fXjbFXRdtdWT-5YwEE0cyr0QFGoCghtix7rQ4YnxRwg`);
             break;
         case 'clanlink':
-            message.channel.search('https://link.clashofclans.com/?action=OpenClanProfile&tag=L2RJC0CV');
+            message.channel.send('https://link.clashofclans.com/?action=OpenClanProfile&tag=L2RJC0CV');
             break; 
         case  'recruitmentpost':
             message.channel.send(`💎OFFICIAL FWA💎  
