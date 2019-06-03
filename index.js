@@ -16,7 +16,7 @@ const prefix = '!';
 var version = '1.0.1';
 
 bot.on('ready', () => {
-    console.log(`${bot.user.username}`is online!);
+    console.log(`${bot.user.username} is online!`);
     bot.user.setGame("Playing COC");
 });
 
