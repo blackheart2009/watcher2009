@@ -17,7 +17,7 @@ var version = '1.0.1';
 
 bot.on('ready', () => {
     console.log(`${bot.user.username} is online!`);
-    bot.user.setGame("Playing COC");
+    bot.user.setActivity("Playing COC");
 });
 
 bot.on('guildMemberAdd', member => {
