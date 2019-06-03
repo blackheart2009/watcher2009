@@ -24,11 +24,8 @@ bot.on('guildMemberAdd', member => {
     member.guild.channels.get('573754852375658496').send(`━━━━━━━━━━━━━━━━━━━━━━━━
     Hey ${member}!, Welcome to our server 🎉🤗 !
     ━━━━━━━━━━━━━━━━━━━━━━━━
-    1. Be sure to read #general_clan-rules📜  first!
-    2. Look in #server_rules🚦for server information & rules.
-    3- Check out all about FWA rules in #fwa_war-rules🚨 
-    4. If you're done go to #chit-chat💬 and chat with us.
-    5- Be sure to check if it's Win or Loose war in #📣win_or_loss-war-announcement 
+    1.DONATION TRACKER - <#573729080604622898>
+    2.USE COMMANDS HERE - <#582791269458116608>
     ━━━━━━━━━━━━━━━━━`);
 });
 
